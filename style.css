@@ -1,0 +1,67 @@
+body {
+  font-family: sans-serif;
+  background-image: url('images/background.jpg');
+  background-repeat:repeat-y;
+  background-position: top center;
+  background-size: auto 1100px;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.screen {
+  background: #b8c3ea;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+}
+
+h1 { text-align: center; }
+p { text-align: center; color: #555; }
+
+.folder { margin: 15px 0; border: 1px solid #020406; border-radius: 6px; overflow: hidden; }
+.folder-head {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  background: #b8c3ea;
+  cursor: pointer;
+}
+.folder-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 10px;
+}
+.folder-content img {
+  width: 48%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.folder.open .folder-content {
+  max-height: 500px; /* assez pour toutes les images */
+  padding: 10px;
+}
+/* Changement de couleur au survol des boutons */
+.folder-head:hover {
+  background-color: #6fc8f1;   /* couleur de fond quand on passe la souris */
+  color: #111;              /* couleur du texte au survol */
+  transition: 0.3s;         /* transition douce pour l'effet */
+}
+
+/* Animation pour le texte au chargement */
+h1 {
+  animation: fadeIn 1s ease-in;
+}
+
+/* Définition de l'animation fadeIn */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
